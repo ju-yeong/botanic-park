@@ -186,7 +186,7 @@
     right: 0;
     width: 500px;
     height: 690px;
-    background: url(../images/sec-02-img.png) no-repeat center;
+    background: url(../images/sec-02-img.jpg) no-repeat center;
     background-size: cover;
 }
 .sec02-bg p{
@@ -474,18 +474,12 @@
 .section06{
     padding-top: 160px;
 }
-.sec06-wrap{
-    overflow-x: scroll;
-}
-.sec06-wrap::-webkit-scrollbar{
-    display: none;
-}
 .sec06-con{
     position: relative;
     text-align: center;
-    width: 300px;
-    padding-bottom: 85px;
+    padding-bottom: 130px;
     flex-shrink: 0;
+    margin: 0 20px;
 }
 .sec06-con h3{
     height: 40px;
@@ -546,7 +540,7 @@
 }
 .sec06-con a{
     position: absolute;
-    bottom: 0;
+    top: 560px;
     left: 50%;
     transform: translateX(-50%);
     border: 1px solid #9CCB86;
@@ -575,6 +569,29 @@
 .sec06-con a:hover::after{
     left: 0;
 }
+
+/* slick button */
+
+.slick-arrow{
+    display: none !important;
+}
+.slick-dots{
+    display: flex;
+    justify-content: center;
+}
+.slick-dots button{
+    font-size: 0;
+    margin: 0 10px;
+    padding: 8px;
+    border-radius: 100%;
+    border: 1px solid #9CCB86;
+    background-color: #fff;
+}
+.slick-active button{
+    background-color: #9CCB86;
+}
+
+/* slick button end */
 
 /* section06 end */
 
@@ -824,20 +841,6 @@ scroll snap animation
 .w-25{
     width: 25%;
 }
-/* .long-ani-key{
-    animation: long-ani 1s ease-in-out;
-}
-@keyframes long-ani{
-    0%{
-        width: unset;
-    }
-    50%{
-        width: 100%;
-    }
-    100%{
-        width: unset;
-    }
-} */
 .appear-ani{
     opacity: 1 !important;
 }

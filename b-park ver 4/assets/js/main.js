@@ -9,6 +9,31 @@ $(window).scroll(function(){
     }
 })
 
+// slick
+
+$('.sec06-wrap').slick({
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    responsive: [ // 반응형 웹 구현 옵션
+            {  
+                breakpoint: 960, //화면 사이즈 960px
+                settings: {
+                    dots: true,
+                    slidesToShow:2 
+                } 
+            },
+            {  
+                breakpoint: 800, //화면 사이즈 960px
+                settings: {
+                    dots: true,
+                    slidesToShow:1
+                } 
+            }
+        ]
+});
+
+// slick end
+
 
 // nav scroll spy
 
