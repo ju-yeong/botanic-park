@@ -1,0 +1,225 @@
+gsap.registerPlugin(ScrollTrigger);
+AOS.init();
+
+$(window).scroll(function(){
+    if($(this).scrollTop()>800){
+        $('.nav-bar').css('dicplay','block').fadeIn(200);
+    } else {
+        $('.nav-bar').fadeOut(200);
+    }
+})
+
+
+// nav scroll spy
+
+$(function () {
+
+    var link = $('#navBar a.dot');
+    link.on('click', function (e) {
+
+        var target = $($(this).attr('href'));
+        $('html, body').animate({
+            scrollTop: target.offset().top
+        }, 600);
+        $(this).addClass('nav-active');
+
+        e.preventDefault();
+    });
+
+    $(window).on('scroll', function () {
+        findPosition();
+    });
+
+    function findPosition() {
+        $('section').each(function () {
+            if (($(this).offset().top - $(window).scrollTop()) < 10) {
+                link.removeClass('nav-active');
+                $('#navBar').find('[data-scroll="' + $(this).attr('id') + '"]').addClass('nav-active');
+            }
+        });
+    }
+
+    findPosition();
+});
+
+
+
+// nav scroll spy end
+
+// section04 scroll trigger 
+
+ScrollTrigger.create({
+    trigger: ".sec04-line",
+    // markers: true,
+    start: "10px 700px",
+    toggleClass: {
+        targets: ".sec04-line", 
+        className: "w-100"
+    } 
+});
+
+ScrollTrigger.create({
+    trigger: ".sec04-line",
+    // markers: true,
+    start: "10px 700px",
+    toggleClass: {
+        targets: ".sec04-title span:not(.sec04-line)", className: "appear-ani"
+    }
+});
+
+/* sec04 img ainamtion */
+
+ScrollTrigger.create({
+    trigger: ".sec04-img1",
+    // markers: true,
+    start: "10px 500px",
+    end: "+=150",
+    toggleActions: 'play reverse none reverse',
+    toggleClass: {
+        targets: ".sec04-img1", 
+        className: "w-100"
+    },
+});
+ScrollTrigger.create({
+    trigger: ".sec04-img2",
+    start: "10px 350px",
+    end: "+=150",
+    toggleActions: 'play reverse none reverse',
+    toggleClass: {
+        targets: ".sec04-img2", 
+        className: "w-100"
+    }
+});
+ScrollTrigger.create({
+    trigger: ".sec04-img3",
+    start: "10px 200px",
+    end: "+=150",
+    toggleActions: 'play reverse none reverse',
+    toggleClass: {
+        targets: ".sec04-img3", 
+        className: "w-100"
+    }
+});
+ScrollTrigger.create({
+    trigger: ".sec04-img4",
+    start: "10px 50px",
+    end: "+=150",
+    toggleActions: 'play reverse none reverse',
+    toggleClass: {
+        targets: ".sec04-img4", 
+        className: "w-100"
+    }
+});
+
+
+$('.sec04-img1').mouseenter(function(){
+    $(this).addClass("w-100");
+    $('.sec04-img:not(.sec04-img1)').addClass("w-25");
+})
+$('.sec04-img1').mouseleave(function(){
+    $(this).removeClass("w-100");
+    $('.sec04-img:not(.sec04-img1)').removeClass("w-25");
+})
+// sec04 hover 1
+$('.sec04-img2').mouseenter(function(){
+    $(this).addClass("w-100");
+    $('.sec04-img:not(.sec04-img2)').addClass("w-25");
+})
+$('.sec04-img2').mouseleave(function(){
+    $(this).removeClass("w-100");
+    $('.sec04-img:not(.sec04-img2)').removeClass("w-25");
+})
+// sec04 hover 2
+$('.sec04-img3').mouseenter(function(){
+    $(this).addClass("w-100");
+    $('.sec04-img:not(.sec04-img3)').addClass("w-25");
+})
+$('.sec04-img3').mouseleave(function(){
+    $(this).removeClass("w-100");
+    $('.sec04-img:not(.sec04-img3)').removeClass("w-25");
+})
+// sec04 hover 3
+$('.sec04-img4').mouseenter(function(){
+    $(this).addClass("w-100");
+    $('.sec04-img:not(.sec04-img4)').addClass("w-25");
+})
+$('.sec04-img4').mouseleave(function(){
+    $(this).removeClass("w-100");
+    $('.sec04-img:not(.sec04-img4)').removeClass("w-25");
+})
+// sec04 hover 4
+
+
+// $('.sec04-img1').mouseenter(function(){
+//     $(this).css("width","100%")
+//     $('.sec04-img:not(.sec04-img1)').css("width","25%");
+// })
+// $('.sec04-img2').mouseenter(function(){
+//     $('.sec04-img:not(.sec04-img2)').css("width","25%");
+// })
+// $('.sec04-img3').mouseenter(function(){
+//     $('.sec04-img:not(.sec04-img3)').css("width","25%");
+// })
+// $('.sec04-img4').mouseenter(function(){
+//     $('.sec04-img:not(.sec04-img4)').css("width","25%");
+// })
+
+// section03 slide
+const active = "active";
+const black = "black";
+const firstBox = document.querySelector(".sec03-fig:nth-of-type(1)");
+const lastBox = document.querySelector(".sec03-fig:nth-of-type(4)");
+const leftBtn = document.querySelector(".xi-angle-left-thin");
+const rightBtn = document.querySelector(".xi-angle-right-thin");
+const firstIcon = document.querySelector(".sec03-table li:first-child");
+const lastIcon = document.querySelector(".sec03-table li:last-child");
+
+let moveLeft = function(){
+    let current = document.querySelector(`.${active}`);
+    let current2 = document.querySelector(`.${black}`);
+    if(current){
+        current.classList.remove(active);
+        current2.classList.remove(black);
+        let prev = current.previousElementSibling;
+        let prev2 = current2.previousElementSibling;
+        if(prev){
+            prev.classList.add(active);
+            prev2.classList.add(black);
+        }else{
+            lastBox.classList.add(active);
+            lastIcon.classList.add(black);
+        }
+    }else{
+        firstBox.classList.add(active);
+        firstIcon.classList.add(black);
+    }
+};
+let moveRight = function(){
+    let current = document.querySelector(`.${active}`);
+    let current2 = document.querySelector(`.${black}`);
+    if(current){
+        current.classList.remove(active);
+        current2.classList.remove(black);
+        let next = current.nextElementSibling;
+        let next2 = current2.nextElementSibling;
+        if(next){
+            next.classList.add(active);
+            next2.classList.add(black);
+        }else{
+            firstBox.classList.add(active);
+            firstIcon.classList.add(black);
+        }
+    }else{
+        firstBox.classList.add(active);
+        firstIcon.classList.add(black);
+    }
+}
+
+leftBtn.addEventListener("click", moveLeft);
+rightBtn.addEventListener("click", moveRight);
+
+function init(){
+    firstBox.classList.add(active);
+    firstIcon.classList.add(black);
+}
+init();
