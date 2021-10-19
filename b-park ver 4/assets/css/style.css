@@ -79,6 +79,21 @@
 .door-box:hover .door span{
     display: block;
 }
+.door-icon-box{
+    position: fixed;
+}
+.door-icon{
+    position: fixed;
+    left: 30px;
+    bottom: 40px;
+    width: 40px;
+    height: 40px;
+    background-color: #9CCB86;
+    border-radius: 30px 0 30px 0;
+    cursor: pointer;
+
+    display: none;
+}
 
 /* nav end */
 
@@ -788,6 +803,7 @@
 .section09{
     padding: 130px 0;
     background-color: #D3E4BC;
+    line-height: 150%;
 }
 .section09 h3{
     color: #474747;
@@ -799,23 +815,24 @@
     height: 450px;
     background-color: #E5E5E5;
 }
-.sec09-tap{
+.sec09-tap ul{
     margin-top: 30px;
     padding-bottom: 15px;
     display: flex;
     justify-content: center;
 }
-.sec09-tap p{
+.sec09-tap .btn{
+    position: relative;
     font-family: 'Nanum Myeongjo', serif;
     margin: 0 10px;
     color: #fff;
-    position: relative;
     cursor: pointer;
+    display: inline-block;
 }
-.sec09-tap .active{
+.sec09-tap-active .btn{
     color: #474747;
 }
-.sec09-tap .active::after{
+.sec09-tap-active a::after{
     content: '';
     width: 100%;
     height: 2px;
@@ -824,13 +841,37 @@
     left: 0;
     bottom: -10px;
 }
-.sec09-con{
+.sec09-con-box{
     margin-top: 40px;
-}
-.sec09-con p{
-    line-height: 25px
+    background: #F8F7EF;
+    padding: 30px 20px;
+    border-radius: 10px;
 }
 
+.section09 table{
+    width: 100%;
+}
+.section09 th{
+    border: none;
+    color: #F29A9A;
+    padding: 10px 0;
+}
+.section09 td{
+    text-align: center;
+    border: none;
+    border-top: 1px solid #9CCB86;
+    font-size: 14px;
+    padding: 10px 0;
+}
+
+#sec09-t1{
+    display: block;
+}
+.sec09-con{
+    display: none;
+}
+
+/* section09 end */
 
 /* ========================
 scroll snap animation
@@ -843,4 +884,266 @@ scroll snap animation
 }
 .appear-ani{
     opacity: 1 !important;
+}
+.appear{
+    display: block !important;
+}
+
+/* =======================
+media query
+======================= */
+
+@media (max-width: 1520px){
+    .nav-bar{
+        top: unset;
+        left: 80px;
+        bottom: 100px;
+        display: none;
+    }
+    .door-box{
+        width: 70px;
+        height: 70px;
+        background-color: transparent;
+        border: 1px solid #9CCB86;
+        border-radius: 100%;
+    }
+    .door span{
+        display: block;
+    }
+    .door-icon{
+        display: block;
+    }
+}
+@media (max-width: 1023px){
+    .container{
+        width: 90%;
+    }
+    .main-visual{
+        width: 90%;
+    }
+    .sec02-bg{
+        height: 450px;
+    }
+    .sec02-bg p{
+        top: 50px;
+    }
+    .sec02-box{
+        padding: 250px 0 100px 0;
+    }
+    .sec02-box p{
+        margin-top: 50px;
+    }
+    .sec06-con{
+        margin-right: 40px;
+        scroll-snap-align: center;
+    }
+}
+@media(max-width: 768px){
+    .sec08-div{
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
+@media(max-width: 600px){
+    h3{
+        font-size: 24px;
+    }
+    /* common end */
+
+    .main-visual{
+        width: 100%;
+        overflow-x: hidden;
+        height: 300px;
+    }
+    .main-visual-img{
+        width: 265px;
+        height: 265px;
+    }
+    .main-visual-01{
+        left: -50px;
+    }
+    .main-visual-03{
+        right: -50px;
+    }
+    .main-title h1{
+        font-size: 35px;
+    }
+    .main-title h5{
+        font-size: 20px;
+    }
+
+    /* section01 end */
+
+    .sec02-bg{
+        display: none;
+    }
+    .sec02-box{
+        width: 100%;
+        padding: 100px 0;
+    }
+    .sec02-wrap{
+        height: 100%;
+    }
+    .sec02-box{
+        position: relative;
+    }
+    .sec02-box p{
+        font-size: 16px;
+    }
+
+    /* section02 end  */
+
+    .sec03-arrow{
+        font-size: 40px;
+    }
+    .sec03-bg{
+        width: 250px;
+        background-size: contain;
+        margin: 0 auto;
+    }
+    .sec03-fig{
+        width: 100%;
+    }
+    .sec03-fig figcaption{
+        left: 0;
+        top: 0;
+        margin: 0 auto;
+    }
+
+    /* section03 end */
+
+    .sec04-content{
+        flex-direction: column;
+        height: 600px;
+        margin-top: 20px;
+    }
+    .sec04-img{
+        width: 100%;
+        height: 25%;
+        margin: 10px 0;
+    }
+    .sec04-img:hover{
+        height: 100%;
+    }
+
+    /* section04 end */
+
+    .sec05-bg{
+        display: none;
+    }
+    .section05 table td{
+        width: 100%;
+    }
+
+    /* section05 end */
+
+    .section06 .container{
+        width: 100%;
+    }
+    .sec06-wrap{
+        padding-left: 40px;
+    }
+    .sec06-con{
+        width: 250px;
+    }
+    
+    
+    /* section06 end */
+
+    .sec07-d1{
+        flex-direction: column;
+    }
+    .sec07-d2{
+        flex-direction: column-reverse;
+    }
+    .sec07-img>div{
+        height: 300px;
+    }
+    .sec07-d1 .sec07-info {
+        margin-left: 0px;
+    }
+    .sec07-d2 .sec07-info {
+        margin-right: 0px;
+    }
+    .sec07-info{
+        margin-top: 20px;
+        width: 100%;
+        height: 350px;
+    }
+
+    /* section07 end */
+    
+    .sec08-div{
+        width: 100%;
+        text-align: center;
+    }
+    .sec08-d1 .label{
+        width: 180px;
+    }
+    .sec08-p{
+        flex-direction: column;
+        justify-content: center;
+    }
+    .sec08-p .min-title{
+        width: 100%;
+        padding: 0;
+        text-align: center;
+    }
+    .sec08-p p:not(.min-title){
+        width: 95%;
+        margin: 0 auto;
+    }
+
+    /* section08 end */
+
+    .sec09-tap p{
+        flex-shrink: 0;
+        font-size: 14px;
+        margin: 0 5px;
+    }
+}
+
+@media (max-width: 400px){
+    .sec02-box p {
+        font-size: 14px;
+    }
+    .sec03-table{
+        width: 100%;
+    }
+    .sec03-slider{
+        margin-top: 0;
+    }
+    .sec03-fig{
+        font-size: 14px;
+    }
+    .section05 td p{
+        font-size: 14px;
+    }
+
+    .sec06-con:nth-child(1){
+        scroll-snap-align: start;
+        padding-left: 40px;
+    }
+    .sec06-con:nth-child(1) a{
+        margin-left: 20px;
+    }
+    .sec06-con:nth-child(2){
+        scroll-snap-align: center;
+    }
+    .sec06-con:nth-child(3){
+        scroll-snap-align: end;
+        padding-bottom: 0;
+        padding-right: 40px;
+    }
+    .sec06-con02{
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
+    .sec08-div{
+        font-size: 14px;
+    }
+    .sec09-con{
+        font-size: 14px;
+    }
 }

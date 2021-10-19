@@ -45,3 +45,11 @@ th, td {
     border: 1px solid #9CCB86;
     vertical-align: middle;
 }
+
+.w-33{
+    width: 33.33%;
+}
+
+strong{
+    font-weight: 600;
+}
