@@ -813,7 +813,9 @@
 .section09 .map{
     width: 100%;
     height: 450px;
-    background-color: #E5E5E5;
+}
+.map-frame{
+    width: 100%;
 }
 .sec09-tap ul{
     margin-top: 30px;
