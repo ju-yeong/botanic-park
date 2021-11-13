@@ -314,6 +314,7 @@ init();
 
 // section03 slide end
 
+// kakao map
 
 var container = document.getElementById('map');
 var options = {
@@ -323,6 +324,7 @@ var options = {
 
 var map = new kakao.maps.Map(container, options);
 
+// kakao map end
 
 // section09 tap
 
