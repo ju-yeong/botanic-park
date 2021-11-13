@@ -314,6 +314,16 @@ init();
 
 // section03 slide end
 
+
+var container = document.getElementById('map');
+var options = {
+    center: new kakao.maps.LatLng(33.450701, 126.570667),
+    level: 3
+};
+
+var map = new kakao.maps.Map(container, options);
+
+
 // section09 tap
 
 const tabList = document.querySelectorAll('.sec09-tap li');
@@ -336,3 +346,4 @@ for(var i = 0; i < tabList.length; i++){
 }
 
 // section09 tap 
+
