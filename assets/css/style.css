@@ -1,6 +1,37 @@
 @import url(reset.css);
 @import url(common.css);
 
+
+.modal{
+    position: fixed;
+    top: 95px;
+    left: 35px;
+
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    max-width: 250px;
+    background-color: #fff;
+    border-radius: 20px;
+    z-index: 999;
+    text-align: center;
+    line-height: 1.5;
+    overflow: hidden;
+    
+    box-shadow: 0px 0px 22px -7px rgba(0,0,0,0.22);
+}
+.modal p{
+    padding: 50px 20px;
+}
+.modal div{
+    background-color: #252525;
+    color: #fff;
+    padding: 20px;
+    cursor: pointer;
+}
+
+
+
 .nav-bar{
     position: fixed;
     z-index: 999;

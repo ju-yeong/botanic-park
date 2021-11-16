@@ -1,3 +1,8 @@
+$('.modal>div').click(function() {
+    $('.modal').css('display','none');
+})
+
+
 gsap.registerPlugin(ScrollTrigger);
 AOS.init();
 
