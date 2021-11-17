@@ -228,7 +228,20 @@
     .sec08-div{
         font-size: 14px;
     }
+    .sec09-tap{
+        font-size: 12px;
+    }
     .sec09-con-box{
         font-size: 14px;
+    }
+    .sec09-con-box .row{
+        flex-direction: column;
+    }
+    .sec09-con-box .w-33{
+        width: 100%;
+        padding-bottom: 30px;
+    }
+    .sec09-con-box .w-33:last-child{
+        padding-bottom: 0;
     }
 }
